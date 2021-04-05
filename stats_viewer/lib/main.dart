@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               children: [
                 Container(padding: EdgeInsets.all(20)),
-                Text("Data Groups", style: TextStyle(fontSize: 30, color: Colors.white),),
+                Text("Data Groups", style: TextStyle(fontSize: 28, color: Colors.white),),
               ],
             ),
             Divider(color: Colors.white, endIndent: 100, indent: 43, thickness: 2,),

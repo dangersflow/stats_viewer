@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'importPage.dart';
+import 'pageTransition.dart';
+import 'selectSource.dart';
 
 void main() {
   runApp(MyApp());
@@ -101,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Column(
               children: [
                 Container(
-                  padding: EdgeInsets.fromLTRB(0, 0, 0, 300),
+                  padding: EdgeInsets.fromLTRB(0, 0, 0, (MediaQuery.of(context).size.height) / 3),
                 ),
                 Row(
                   children: [
@@ -120,7 +123,9 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {},
+        onPressed: () => {
+          Navigator.of(context).push(createRoute(Offset(0.0, 1.0), Offset(0.0, 0.0), Curves.fastLinearToSlowEaseIn, () => SelectSource()))
+        },
         tooltip: 'Increment',
         child: Icon(Icons.add),
         backgroundColor: Color(0xFF272B31),

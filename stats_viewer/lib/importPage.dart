@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:file_picker/file_picker.dart';
+import 'dart:io';
 
 enum ImportMode {manual, automatic}
 List<String> rangesList = [];
@@ -21,10 +23,23 @@ class _ImportPageState extends State<ImportPage> with TickerProviderStateMixin {
   AnimationController _controller2;
   Animation<double> _animation2;
 
+  void grabFile() async {
+    FilePickerResult result = await FilePicker.platform.pickFiles();
+
+    if(result != null) {
+      File file = File(result.files.single.path);
+    } else {
+      // User canceled the picker
+    }
+  }
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+
+    grabFile();
+
     _controller = AnimationController(
     duration: const Duration(milliseconds: 500),
     vsync: this,

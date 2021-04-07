@@ -30,7 +30,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primaryColor: Color(0xFF181A1E),
         scaffoldBackgroundColor: Color(0xFF181A1E),
-        fontFamily: "Quicksand"
+        fontFamily: "Quicksand",
+        unselectedWidgetColor: Color(0xFFB7BCC5)
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -130,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Icon(Icons.add),
         backgroundColor: Color(0xFF272B31),
       ), // This trailing comma makes auto-formatting nicer for build methods.
-
+        //bruh
     );
   }
 }

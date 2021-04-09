@@ -31,7 +31,10 @@ class _ImportPageState extends State<ImportPage> with TickerProviderStateMixin {
   Animation<double> _animation2;
 
   void grabFile() async {
-    FilePickerResult result = await FilePicker.platform.pickFiles();
+    FilePickerResult result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['xlsx', 'xlsm', 'xlsb', 'xltx', 'xltm', 'xls', 'xml', 'csv', 'tsv', 'ods']
+    );
 
     if(result != null) {
       File file = File(result.files.single.path);

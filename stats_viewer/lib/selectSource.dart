@@ -32,13 +32,14 @@ class _SelectSourceState extends State<SelectSource> {
               children: [
                 OrientationBuilder(
                   builder: (context, orientation) {
-                    return new GridView.count(
+                    return new GridView.extent(
                   primary: false,
                   padding: const EdgeInsets.all(35),
                   shrinkWrap: true,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
-                  crossAxisCount: 5,
+                  //crossAxisCount: 5,
+                  maxCrossAxisExtent: 200,
                   children: <Widget>[
                     CardItem(name: "File", icon: Icon(Icons.file_copy, color: Color(0xFFB7BCC5), size: 50,), page: () => ImportPage(), passPage: true,),
                     CardItem(name: "Facebook Ads", icon: Icon(FontAwesome.facebook_square, color: Color(0xFF77ADDB), size: 50,), passPage: false,),

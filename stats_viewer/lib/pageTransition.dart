@@ -1,10 +1,15 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'importPage.dart';
+import 'DataGroup.dart';
 
-Route createRoute(@required Offset begin, @required Offset end, @required Curve curve, @required Widget Function() page) {
+Route createRoute(
+  @required Offset begin,
+  @required Offset end,
+  @required Curve curve,
+  Widget Function() page,
+) {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => page(),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {

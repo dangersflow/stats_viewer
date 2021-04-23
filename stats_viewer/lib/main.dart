@@ -115,20 +115,32 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Row(
-            children: [
-              Container(padding: EdgeInsets.all(20)),
-              Text(
-                "Data Groups",
-                style: TextStyle(fontSize: 28, color: Colors.white),
-              ),
-            ],
-          ),
-          Divider(
-            color: Colors.white,
-            endIndent: 100,
-            indent: 43,
-            thickness: 2,
+          Container(
+            padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
+            margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
+            decoration: BoxDecoration(
+                border: Border.all(width: 3.0, color: Color(0xFF515151)),
+                color: Color(0xFF272B31),
+                borderRadius: BorderRadius.circular(10)),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Container(padding: EdgeInsets.all(20)),
+                    Text(
+                      "Data Groups",
+                      style: TextStyle(fontSize: 28, color: Colors.white),
+                    ),
+                  ],
+                ),
+                Divider(
+                  color: Colors.white,
+                  endIndent: 100,
+                  indent: 43,
+                  thickness: 2,
+                ),
+              ],
+            ),
           ),
           Column(
             children: [

@@ -5,8 +5,9 @@ import 'package:file_picker/file_picker.dart';
 import 'dart:io';
 import 'DataGroup.dart';
 import 'Data.dart';
-import 'package:excel/excel.dart';
 import 'Data.dart' as myData;
+import 'package:excel/excel.dart';
+import 'ExcelBook.dart';
 
 typedef DataGroupCallback = Function(DataGroup arg);
 enum ImportMode { manual, automatic }
@@ -140,15 +141,34 @@ class _ImportPageState extends State<ImportPage> with TickerProviderStateMixin {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      "Import",
-                      style: TextStyle(fontSize: 28, color: Colors.white),
-                    ),
-                    Divider(
-                      color: Colors.white,
-                      endIndent: 100,
-                      indent: 0,
-                      thickness: 2,
+                    Container(
+                      padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
+                      margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                      decoration: BoxDecoration(
+                          border:
+                              Border.all(width: 3.0, color: Color(0xFF515151)),
+                          color: Color(0xFF272B31),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Container(padding: EdgeInsets.all(20)),
+                              Text(
+                                "Import",
+                                style: TextStyle(
+                                    fontSize: 28, color: Colors.white),
+                              ),
+                            ],
+                          ),
+                          Divider(
+                            color: Colors.white,
+                            endIndent: 100,
+                            indent: 43,
+                            thickness: 2,
+                          ),
+                        ],
+                      ),
                     ),
                     Container(padding: EdgeInsets.fromLTRB(0, 0, 0, 15)),
                     Text(
@@ -469,13 +489,14 @@ class _ImportPageState extends State<ImportPage> with TickerProviderStateMixin {
                                   print(rangeExpression
                                       .allMatches(rangesList[x]));
                                   if (rangeExpression.hasMatch(rangesList[x])) {
+                                    /*
                                     myData.Data newData;
                                     rangesList[x].split(":").forEach((element) {
                                       print(element
                                           .split(new RegExp(r'[a-zA-Z]')));
                                       print(
                                           element.split(new RegExp(r'[0-9]')));
-                                    });
+                                    }); */
                                   }
                                 }
                               }
